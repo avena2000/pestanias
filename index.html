@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/705d8d055f.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <title>Pestañas</title>
+</head>
+<body>
+<section>
+    <h2>OUR WORKS</h2>
+    <h1>Latest Projects</h1>
+    <ul class="botonera">
+        <li><a class="active" id="all" href="#">ALL ITEMS</a></li>
+        <li><a href="#" id="mobile">MOBILE APP</a></li>
+        <li><a href="#" id="web-app">WEB APP</a></li>
+        <li><a href="#" id="custom">CUSTOM SOFT</a></li>
+        <li><a href="#" id="ui-ux">UI/UX</a></li>
+    </ul>
+
+    <div class="imagenes">
+        <figure class="mobile ui-ux">
+            <img src="imagenes/port7.jpg" alt="img">
+        </figure>
+        <figure class="web-app ui-ux">
+            <img src="imagenes/port2.png" alt="img">
+        </figure>
+        <figure class="custom">
+            <img src="imagenes/port7.jpg" alt="img">
+        </figure>
+        <figure class="mobile">
+            <img src="imagenes/port6.jpg" alt="img">
+        </figure>
+        <figure class="web-app custom">
+            <img src="imagenes/port3.jpg" alt="img">
+        </figure>
+    </div>
+    
+</section>
+<script>
+    $(document).ready(function () {
+        const $botoneraLinks = $(".botonera a");
+        const $imagenesFigures = $(".imagenes figure");
+
+        $botoneraLinks.click(function (event) {
+            event.preventDefault();
+            const $this = $(this);
+            const filter = $this.attr("id");
+
+            if (filter !== "all") {
+                $imagenesFigures.not(`.${filter}`).stop(true, true).hide(250);
+                $imagenesFigures.filter(`.${filter}`).stop(true, true).show(250);
+            } else {
+                $imagenesFigures.stop(true, true).show(250);
+            }
+
+            $botoneraLinks.removeClass("active");
+            $this.addClass("active");
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    color: #333;
+    background-color: #F0F3F8;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+section {
+    margin: auto;
+    max-width: 1200px;
+    height: 100vh;
+}
+.imagenes {
+    display: flex;
+    transition: all 0.3s ease-in-out; /* Transición para los cambios de estilo */
+    flex-wrap: wrap;
+}
+figure {
+    margin-bottom: 30px;
+    padding: 0 12px;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Animación de opacidad y movimiento */
+}
+figure.hidden {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+img {
+    width: 100%;
+    border-radius: 5px;
+}
+h2 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #00AEFF;
+    padding: 20px 12px 0 12px;
+}
+h1{
+    font-size: 40px;
+    font-weight: 700;
+    padding: 20px 12px 20px 12px;
+}
+.botonera{
+    padding: 0 12px 20px 12px;
+    display: flex;
+    justify-content: start;
+    gap: 15px;
+    list-style: none;
+}
+.botonera a {
+    display: inline-block;
+    padding: 16px 25px;
+    border-radius: 5px;
+    color: black;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    background-color: transparent;
+}
+.botonera a.active, .botonera a.active:hover {
+    background-color: #0972d6;
+    color: whitesmoke;
+}
+
+.botonera a:hover {
+    background-color: #0286ff;
+    color: whitesmoke;
+}
